@@ -1,0 +1,24 @@
+* Haskell Type Demo
+A quick demo I gave to friends about why the Haskell type system seems
+to be objectively better than other type systems.
+
+** Explanation
+*** Caveats
+- This type system is not unique to Haskell (Elm has a similar one).
+- I don't believe this type system is even unique to functional
+  programming languages
+
+*** Reasons its better
+1. Aesthetically the types make for more descriptive function type
+   signatures.
+2. It will help you catch more bugs.
+
+** Running Programs
+*** C
+gcc -Wall -Werror -o main main.c && ./main
+
+*** Go
+go run main.go
+
+*** Haskell
+ghc -Wall -Werror main.hs && ./main
