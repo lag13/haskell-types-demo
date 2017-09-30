@@ -38,10 +38,11 @@ data Maybe a = Just a | Nothing
 -- iteration of the lookup function. The returned value of type "Maybe
 -- Int" feels more descriptive than Go's return value of (int, bool)
 -- (because the relationship between int and bool is not enforced by
--- code, they are just two values that are getting returned). Here
--- "Maybe Int" REALLY signifies that you might get an integer or you
--- might not and its not possible to use a value if it doesn't exist
--- (like is possible in Go and C).
+-- code, they are just two values that are getting returned and you as
+-- a programmer have to be aware of their relationship). Here "Maybe
+-- Int" REALLY signifies that you might get an integer or you might
+-- not and its not possible to use a value if it doesn't exist (like
+-- is possible in C and Go).
 lookup :: String -> [(String, Int)] -> Maybe Int
 lookup wantKey mapping =
   if length mapping == 0

@@ -5,7 +5,7 @@ to be objectively better than other type systems.
 ** Why is it Better?
 1. Aesthetically the types make for more descriptive type signatures.
    This is just my personal opinion though.
-2. It will help you catch bugs at compile time. This is an objective
+2. It will catch potential bugs at compile time. This is an objective
    truth.
 
 *** Just wanted to mention
@@ -46,7 +46,7 @@ handles it very elegantly.
   ghc -Wall -Werror main.hs && ./main
 #+END_SRC
 
-** "lookup" function type signature comparisons
+** "lookup" function comparison
 *** C
 #+BEGIN_SRC c
   bool lookup(char *key, strToIntMap m, int *value)
@@ -57,10 +57,22 @@ Another one could have been:
   int *lookup(char *key, strToIntMap m)
 #+END_SRC
 
+**** Criticisms:
+- The type signature is confusing.
+- The function can be used incorrectly (e.g forgetting to check if the
+  value exists before using it).
+
 *** Go
 #+BEGIN_SRC go
   lookup(key string, m map[string]int) (int, bool)
 #+END_SRC
+
+**** Criticisms:
+- The type signature is an improvement over C but the relationship
+  between the (int, bool) return values is not enforced by code, the
+  programmer must be aware of it.
+- The function can be used incorrectly (e.g forgetting to check if the
+  value exists before using it).
 
 *** Haskell
 #+BEGIN_SRC haskell
@@ -72,3 +84,8 @@ type could be rewritten as:
 #+BEGIN_SRC haskell
   lookup :: Eq a => a -> [(a, b)] -> Maybe b
 #+END_SRC
+
+**** Benefits
+- The type signature is very clear.
+- It is not possible to use the function incorrectly and if you forget
+  a case then your code won't even compile.
