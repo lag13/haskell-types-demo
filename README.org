@@ -89,3 +89,12 @@ type could be rewritten as:
 - The type signature is very clear.
 - It is not possible to use the function incorrectly and if you forget
   a case then your code won't even compile.
+
+** Conclustion
+Hopefully you now understand a concrete example of why haskell's type
+system, which lets you create types like ~Maybe~, is an improvement
+over others.
+
+I haven't even talked about typeclasses and how easy it is to make
+polymorphic functions in haskell which is another benefit it has over
+other languages. Perhaps in a later talk.
