@@ -27,9 +27,11 @@ or not it exists) but many languages only let you return one value.
 
 This example might feel contrived but the idea of looking up something
 which may not exist is not. For example you could be looking up a key
-in a redis cache or a specific row in db, etc... So this pattern
-definitely comes up a lot in programming and I feel that haskell
-handles it very elegantly.
+in a redis cache or a specific row in db, etc... So this pattern comes
+up a lot and I feel that haskell handles it very elegantly.
+
+Now look at all the source code files. They have comments about the
+different approaches each language can take when solving this problem.
 
 *** C
 #+BEGIN_SRC sh
@@ -90,7 +92,7 @@ type could be rewritten as:
 - It is not possible to use the function incorrectly and if you forget
   a case then your code won't even compile.
 
-** Conclustion
+** Conclusion
 Hopefully you now understand a concrete example of why haskell's type
 system, which lets you create types like ~Maybe~, is an improvement
 over others.
