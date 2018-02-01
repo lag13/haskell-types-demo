@@ -42,7 +42,9 @@ data Maybe a = Just a | Nothing
 -- a programmer have to be aware of their relationship). Here "Maybe
 -- Int" REALLY signifies that you might get an integer or you might
 -- not and its not possible to use a value if it doesn't exist (like
--- is possible in C and Go).
+-- is possible in C and Go). Note that this function could be written
+-- more "nicely" with pattern matching but I thought this would be
+-- more accessible to people unfamaliar with Haskell.
 lookup :: String -> [(String, Int)] -> Maybe Int
 lookup wantKey mapping =
   if length mapping == 0
